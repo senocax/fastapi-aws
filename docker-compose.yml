@@ -1,15 +1,15 @@
 services:
   database:
-    image: 'postgres:latest'
+    image: postgres
     ports:
       - 5432:5432
     restart: always
     environment:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
-      POSTGRES_DB: imagedb
+      POSTGRES_DB: exampledb
     volumes:
-      - image_app:/var/lib/postgresql/data
+      - db-photo-upload-service:/var/lib/postgresql/data
   adminer:
     image: adminer
     restart: always
@@ -19,4 +19,4 @@ services:
       - 8080:8080
 
 volumes:
-  image_app:
+  images_app:
