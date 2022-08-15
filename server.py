@@ -26,7 +26,7 @@ async def get_all_photos(PhotoModel):
 
     conn = psycopg2.connect(
         host="0.0.0.0",
-        database="photodb",
+        database="exampledb",
         user="docker",
         password="docker"
     )
